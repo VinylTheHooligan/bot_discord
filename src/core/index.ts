@@ -3,6 +3,6 @@
 import { BotClient } from './discordjs/client';
 import { initCoreCommand } from './commandLoader.core';
 
-export function CoreIndex(Client: BotClient) {
+export function initCoreIndex(Client: BotClient) {
     initCoreCommand(Client);
 }
