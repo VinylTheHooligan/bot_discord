@@ -6,6 +6,9 @@ export default {
         .setDescription("Répond test !"),
 
     async execute(interaction: ChatInputCommandInteraction) {
-        await interaction.reply("Test !");
+        await interaction.reply({
+            content: "Test !",
+            ephemeral: true
+        });
     }
 }

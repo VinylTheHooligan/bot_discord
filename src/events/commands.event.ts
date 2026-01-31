@@ -1,4 +1,5 @@
 import { Events } from 'discord.js';
+
 import { BotClient } from '../core/discordjs/client';
 
 export function CommandEvent(Client: BotClient) {
@@ -13,9 +14,11 @@ export function CommandEvent(Client: BotClient) {
         try {
             await COMMAND.execute(interaction);
         } catch (error) {
+
             console.error(error);
             await interaction.reply({
-                content: "Une erreur est survenue lors de l'exécution de la commande."
+                content: "Une erreur est survenue lors de l'exécution de la commande.",
+                ephemeral: true
             });
         }
     });

@@ -3,11 +3,15 @@ import { BotClient } from './src/core/discordjs/client';
 import { initCoreIndex } from './src/core/index';
 import dotenv from "dotenv";
 
-dotenv.config(); // loads environment files
+const IS_BUILD = __filename.endsWith(".js");
+process.env.NODE_ENV = IS_BUILD ? "js" : "ts";
+
+dotenv.config({
+    path: IS_BUILD ? ".env.production" : ".env"
+}); // loads environment files depending if the project is build or not
 
 // Create a new client instance
 const CLIENT = new BotClient([ GatewayIntentBits.Guilds ]); // guild = Discord Server  
-
 const MOCK: boolean = process.env.MOCK === "true";   /* MOCK is a simulation mode that prevents unnecessary 
                                                         calls to the bot on Discord. In production, MOCK is
                                                         set to false */  
