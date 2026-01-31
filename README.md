@@ -147,3 +147,6 @@ Pour toute question sur le projet ou la contribution, ouvrez une issue sur GitHu
 ---
 
 Merci d'aider à construire et maintenir ce bot pour la promotion — contributions bienvenues via fork + Pull Request !
+
+
+bot_discord © 2026 by WILIAM SALEMBIEN is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/

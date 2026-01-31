@@ -1,15 +1,15 @@
-import { Client, Events, GatewayIntentBits } from "discord.js";
+import { Events, Collection, GatewayIntentBits } from "discord.js";
+import { BotClient } from './src/core/discordjs/client';
 import dotenv from "dotenv";
 
 dotenv.config(); // loads environment files
 
 // Create a new client instance
-const CLIENT = new Client({ intents: [GatewayIntentBits.Guilds ]}); // guild = Discord Server
+const CLIENT = new BotClient([ GatewayIntentBits.Guilds ]); // guild = Discord Server
 
 const MOCK: boolean = process.env.MOCK === "true";   /* MOCK is a simulation mode that prevents unnecessary 
                                             calls to the bot on Discord. In production, MOCK is
-                                            set to false */
-
+                                            set to false */                                  
 // When CLIENT is ready, it run this code once
 CLIENT.once(Events.ClientReady, (readyClient) => {
 	console.log(`Ready! Logged in as ${readyClient.user.tag}`);
@@ -25,3 +25,5 @@ else {
 
     CLIENT.login(process.env.DISCORD_TOKEN);
 }
+
+CLIENT.commands = new Collection();
