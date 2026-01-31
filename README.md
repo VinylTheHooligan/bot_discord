@@ -37,7 +37,7 @@ flowchart TD
   F --> G[On InteractionCreate]
   G --> H{Is ChatInputCommand?}
   H -- yes --> I[Resolve command from client.commands]
-  I --> J[Execute command.execute(interaction)]
+  I --> J[Execute command.execute]
   H -- no --> K[Ignore]
   J --> L[Reply / Error handling]
   style D fill:#f9f,stroke:#333,stroke-width:1px
