@@ -33,7 +33,7 @@ flowchart TD
   B --> C{Load Core}
   C --> D[CommandLoader: read src/commands]
   D --> E[Register commands in client.commands]
-  C --> F[Attach event handlers (src/events)]
+  C --> F[Attach event handlers - src/events]
   F --> G[On InteractionCreate]
   G --> H{Is ChatInputCommand?}
   H -- yes --> I[Resolve command from client.commands]
